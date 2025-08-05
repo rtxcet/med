@@ -1,0 +1,182 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    header .header-top {
+        display: flex;
+        flex-direction: column;
+    }
+
+        header .header-top .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            header .header-top .wrapper .logo {
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #28a745;
+                /* Bootstrap success rengi */
+            }
+
+            header .header-top .wrapper .mobil-navbar {
+                display: none;
+            }
+
+
+            header .header-top .wrapper .list {
+                display: flex;
+                gap: 20px;
+            }
+
+                header .header-top .wrapper .list i {
+                    color: #28a745;
+                }
+
+        header .header-top .search-box {
+            display: flex;
+            align-items: center;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 0 12px;
+            width: 100%;
+            height: 50px;
+            margin-top: 10px;
+        }
+
+            header .header-top .search-box input {
+                flex: 1;
+                border: none;
+                outline: none;
+                background: transparent;
+                font-size: 16px;
+                color: #333;
+            }
+
+            header .header-top .search-box button {
+                background: none;
+                border: none;
+                color: #28a745;
+                /* Turuncu renk */
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+    header .header-footer .category-slider {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0 10px 0;
+        scrollbar-width: thin; /* Firefox: İnce scrollbar */
+        scrollbar-color: #aaa transparent; /* Firefox: Renk ayarı */
+    }
+
+        /* Chrome, Edge, Safari için */
+        header .header-footer .category-slider::-webkit-scrollbar {
+            height: 6px; /* Scrollbar yüksekliği */
+        }
+
+        header .header-footer .category-slider::-webkit-scrollbar-track {
+            background: transparent; /* Arka plan rengi */
+        }
+
+        header .header-footer .category-slider::-webkit-scrollbar-thumb {
+            background-color: #aaa; /* Kaydırma çubuğu rengi */
+            border-radius: 10px; /* Yuvarlak uçlar */
+        }
+
+
+        header .header-footer .category-slider a {
+            display: inline-block;
+            margin-right: 10px;
+            border: none;
+            background: none;
+            color: black;
+        }
+
+        header .header-footer .category-slider .active {
+            background-color: #28a745; /* Bootstrap'in success yeşili */
+            color: white; /* Yazı rengi */
+            padding: 6px 12px; /* İç boşluk */
+            border-radius: 8px; /* Hafif yuvarlatma */
+            font-weight: 500; /* Yazıyı biraz kalın yapar */
+            transition: background-color 0.3s ease;
+        }
+
+        header .header-footer .category-slider a:hover {
+            background-color: #28a745; /* Bootstrap'in success yeşili */
+            color: white; /* Yazı rengi */
+            padding: 6px 12px; /* İç boşluk */
+            border-radius: 8px; /* Hafif yuvarlatma */
+            font-weight: 500; /* Yazıyı biraz kalın yapar */
+            transition: background-color 0.3s ease;
+        }
+
+
+
+
+@media (max-width: 768px) {
+    header .header-top .wrapper .mobil-navbar {
+        display: flex;
+    }
+
+    header .header-top .wrapper .list {
+        display: none;
+    }
+}
+
+/* Offcanvas genel arka plan ve yazı rengi */
+#mobileMenu {
+    background-color: #f8f9fa; /* Açık gri arka plan (kontrast için) */
+    color: #212529;
+}
+
+    /* Logo */
+    #mobileMenu .logo {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #28a745;
+    }
+
+
+    /* Menü bağlantıları */
+    #mobileMenu .offcanvas-body ul li a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1rem;
+        color: #212529;
+        border-bottom: 1px solid #dee2e6;
+        transition: all 0.3s ease;
+    }
+
+        /* Hover ve aktif durum */
+        #mobileMenu .offcanvas-body ul li a:hover,
+        #mobileMenu .offcanvas-body ul li a.active {
+            color: white;
+            background-color: #28a745;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
