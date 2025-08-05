@@ -180,3 +180,22 @@ header {
             padding-left: 10px;
             border-radius: 5px;
         }
+
+
+        /* Slider */
+
+main #slider img {
+    height: 500px;
+    width: 100%;
+
+    display: block;
+}
+
+
+
+
+@media (max-width:768px){
+    main #slider img {
+        height: 200px;
+    }
+}
