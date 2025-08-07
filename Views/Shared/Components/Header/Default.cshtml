@@ -1,73 +1,47 @@
 ﻿@{
-	var currentPath = Context.Request.Path.ToString().ToLower();
+	var currentPath = Context.Request.Path.ToString().ToLowerInvariant().Trim('/');
 }
 
+
 <div class="container">
-	<div class="header-top">
-		<div class="wrapper">
-			<div class="logo">Şişli Acil Medikal</div>
-
-			<div class="mobil-navbar">
-				<button class="btn btn-outline-secondary" data-bs-toggle="offcanvas"
-						data-bs-target="#mobileMenu">
-					<i class="fa-solid fa-bars-staggered"></i>
-				</button>
-			</div>
-
-			<div class="list">
-				<div class="d-flex align-items-center">
-					<i class="fas fa-phone-alt me-2"></i>
-					<a href="tel:02122460098" class="text-decoration-none text-dark">0212 246 00 98</a>
-				</div>
-				<div class="d-flex align-items-center">
-					<i class="fas fa-phone-alt me-2"></i>
-					<a href="tel:05340219815" class="text-decoration-none text-dark">0534 021 98 15</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="search-box">
-			<input type="text" placeholder="Aradığınız ürün yazınız...">
-			<button type="submit"><i class="fas fa-search"></i></button>
-		</div>
-	</div>
+	@await Component.InvokeAsync("Head")
 
 	<div class="header-footer">
 		<div class="category-slider mt-3">
-			<a href="/" class="btn btn-primary @(currentPath == "/" ? "active" : "")">Ana Sayfa</a>
+			<a href="/" class="btn btn-primary @(string.IsNullOrWhiteSpace(currentPath) ? "active" : "")">Ana Sayfa</a>
+
 			@foreach (var category in Model)
 			{
-				var slug = category.Name.ToLower().Replace(" ", "-");
-				var url = $"/kategori/{slug}-{category.Id}";
+				var url = $"kategori/{category.Id}";
 				var isActive = currentPath == url;
 
-				<a href="@url" class="btn btn-primary @(isActive ? "active" : "")">
+				<a href="/@url" class="btn btn-primary @(isActive ? "active" : "")">
 					@category.Name
 				</a>
 			}
 		</div>
+
 	</div>
 </div>
 
 <!-- Mobil Sidebar -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
 	<div class="offcanvas-header">
-		<div class="logo">Şişli Acil Medikal</div>
+		<a style="text-decoration:none;" href="/" class="logo">Şişli Acil Medikal</a>
 		<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
 	</div>
 	<div class="offcanvas-body">
 		<ul class="list-unstyled">
 			<li>
-				<a href="/" class="text-decoration-none @(currentPath == "/" ? "active" : "")">Ana Sayfa</a>
+				<a href="/" class="text-decoration-none @(string.IsNullOrWhiteSpace(currentPath) ? "active" : "")">Ana Sayfa</a>
 			</li>
 			@foreach (var category in Model)
 			{
-				var slug = category.Name.ToLower().Replace(" ", "-");
-				var url = $"/kategori/{slug}-{category.Id}";
+				var url = $"kategori/{category.Id}";
 				var isActive = currentPath == url;
 
 				<li>
-					<a href="@url" class="text-decoration-none @(isActive ? "active" : "")">
+					<a href="/@url" class="text-decoration-none @(isActive ? "active" : "")">
 						@category.Name
 					</a>
 				</li>
@@ -75,3 +49,4 @@
 		</ul>
 	</div>
 </div>
+

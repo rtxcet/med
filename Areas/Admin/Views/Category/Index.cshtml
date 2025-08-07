@@ -31,6 +31,7 @@
 					<thead class="table-light">
 						<tr>
 							<th scope="col">İsim</th>
+							<th scope="col">Popüler</th>
 							<th scope="col" class="text-end">İşlemler</th>
 						</tr>
 					</thead>
@@ -39,6 +40,7 @@
 						{
 							<tr>
 								<td>@(item.Name.Length > 30 ? item.Name.Substring(0, 30) + "..." : item.Name)</td>
+								<td>@item.IsPopular</td>
 								<td class="text-end">
 									<div class="btn-group" role="group">
 									

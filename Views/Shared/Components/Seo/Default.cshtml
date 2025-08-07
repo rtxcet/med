@@ -1,0 +1,18 @@
+﻿@model med.Models.Site
+
+<!-- SEO Meta Tags -->
+<title>@Model?.Name - Medikal Malzemeler</title>
+<meta name="description" content="@Model?.SiteMetaDescription">
+<meta name="keywords" content="@Model?.SiteMetaKeyword">
+<meta name="author" content="@Model?.Name - Medikal Malzemeler">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+@if (!string.IsNullOrEmpty(Model?.GoogleA))
+{
+    @Html.Raw(Model.GoogleA)
+}
+
+@if (!string.IsNullOrEmpty(Model?.GoogleT))
+{
+    @Html.Raw(Model.GoogleT)
+}

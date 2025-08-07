@@ -1,0 +1,42 @@
+﻿@model med.Models.Site
+
+<div class="header-top">
+    <div class="wrapper">
+        <a style="text-decoration:none;" href="/" class="logo">Şişli Acil Medikal</a>
+
+        <div class="mobil-navbar">
+            <button class="btn btn-outline-secondary" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <div class="list">
+            @if (!string.IsNullOrEmpty(Model?.Phone))
+            {
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <a href="tel:@(Model.Phone?.Replace(" ", ""))" class="text-decoration-none text-dark">@Model.Phone</a>
+
+                </div>
+            }
+            @if (!string.IsNullOrEmpty(Model?.MobilePhone))
+            {
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-phone-alt me-2"></i>
+                    <a href="tel:@(Model.MobilePhone?.Replace(" ", ""))" class="text-decoration-none text-dark">@Model.MobilePhone</a>
+
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="search-box">
+        <form method="get" action="/products/search" class="d-flex" style="width: 100%;">
+            <input type="text" name="q" placeholder="Aradığınız ürünü yazınız..." class="form-control me-2" />
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>

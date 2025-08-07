@@ -1,0 +1,11 @@
+﻿<section class="partners-section text-center">
+    <div class="container">
+        <h2 class="mb-4">İş Ortaklarımız</h2>
+        <div class="partners-scroll">
+            @foreach (var partner in Model)
+            {
+                <img src="@partner.ImageUrl" alt="Partner Logo" class="partner-logo" style="max-height: 80px;" />
+            }
+        </div>
+    </div>
+</section>

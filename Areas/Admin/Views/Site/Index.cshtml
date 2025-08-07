@@ -1,0 +1,94 @@
+﻿@model med.Models.Site
+
+<div class="container my-4">
+    <div class="col-lg-12 col-xl-12 shadow p-4">
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle me-2"></i> @ViewBag.Message
+            </div>
+        }
+
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Name" class="form-label">Site Adı</label>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Description" class="form-label">Site Açıklaması</label>
+                    <input asp-for="Description" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Phone" class="form-label">Telefon</label>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="MobilePhone" class="form-label">Cep Telefonu</label>
+                    <input asp-for="MobilePhone" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="WpPhone" class="form-label">Whatsapp Telefon</label>
+                    <input asp-for="WpPhone" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email" class="form-label">E-Posta</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Adress" class="form-label">Adres</label>
+                    <input asp-for="Adress" class="form-control" />
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label asp-for="GoogleMaps" class="form-label">Google Maps Link</label>
+                    <input asp-for="GoogleMaps" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="SiteMetaKeyword" class="form-label">Meta Anahtar Kelimeler</label>
+                    <input asp-for="SiteMetaKeyword" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="SiteMetaDescription" class="form-label">Meta Açıklama</label>
+                    <input asp-for="SiteMetaDescription" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="SiteMailAdres" class="form-label">Site Mail Adresi</label>
+                    <input asp-for="SiteMailAdres" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="SiteMailHost" class="form-label">Site Mail Host</label>
+                    <input asp-for="SiteMailHost" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="GoogleA" class="form-label">Google Analytics Kodu</label>
+                    <input asp-for="GoogleA" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="GoogleT" class="form-label">Google Tag Manager Kodu</label>
+                    <input asp-for="GoogleT" class="form-control" />
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

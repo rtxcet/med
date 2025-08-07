@@ -19,6 +19,14 @@
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
+                <!-- IsPopular -->
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" asp-for="IsPopular" />
+                    <label class="form-check-label fw-semibold" asp-for="IsPopular">
+                        Popüler Olsun Mu?
+                    </label>
+                </div>
+
                 <!-- Kaydet ve Geri Butonları -->
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end my-4">
                     <button type="submit" class="btn btn-primary btn-lg px-4" id="submitBtn">

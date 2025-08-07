@@ -26,43 +26,71 @@
     <div id="sidebar" class="sidebar">
         <h4 class="text-center py-3 border-bottom">Flas Panel</h4>
 
-        <a href="/Admin"><i class="fas fa-home me-2"></i>Anasayfa</a>
+        <a href="/Admin"><i class="fas fa-house me-2"></i>Anasayfa</a>
 
         <div class="dropdown">
             <a class="dropdown-toggle d-flex justify-content-between align-items-center text-white" href="#"
                id="CategoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span><i class="fa-solid fa-list me-2"></i>Kategoriler</span>
+                <span><i class="fa-solid fa-tags me-2"></i>Kategoriler</span>
             </a>
             <ul class="dropdown-menu bg-dark mx-2" aria-labelledby="CategoryDropdown" style="width: 90%;">
-                <li><a class="dropdown-item text-white" href="/Admin/Category/Add">Kategori Ekleme</a></li>
-                <li><a class="dropdown-item text-white" href="/Admin/Category/">Kategori Listeleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Category/Add"><i class="fa-solid fa-plus me-2"></i>Kategori Ekleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Category/"><i class="fa-solid fa-list-ul me-2"></i>Kategori Listeleme</a></li>
             </ul>
         </div>
 
         <div class="dropdown">
             <a class="dropdown-toggle d-flex justify-content-between align-items-center text-white" href="#"
                id="ProductDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span><i class="fa-solid fa-list me-2"></i>Ürenler</span>
+                <span><i class="fa-solid fa-boxes-stacked me-2"></i>Ürünler</span>
             </a>
             <ul class="dropdown-menu bg-dark mx-2" aria-labelledby="ProductDropdown" style="width: 90%;">
-                <li><a class="dropdown-item text-white" href="/Admin/Product/Add">Ürün Ekleme</a></li>
-                <li><a class="dropdown-item text-white" href="/Admin/Product/">Ürün Listeleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Product/Add"><i class="fa-solid fa-plus me-2"></i>Ürün Ekleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Product/"><i class="fa-solid fa-list-ul me-2"></i>Ürün Listeleme</a></li>
             </ul>
         </div>
 
         <div class="dropdown">
             <a class="dropdown-toggle d-flex justify-content-between align-items-center text-white" href="#"
                id="BannerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <span><i class="fa-solid fa-list me-2"></i>Banner Yönetimi</span>
+                <span><i class="fa-solid fa-image me-2"></i>Banner Yönetimi</span>
             </a>
             <ul class="dropdown-menu bg-dark mx-2" aria-labelledby="BannerDropdown" style="width: 90%;">
-                <li><a class="dropdown-item text-white" href="/Admin/Banner/Add">Banner Ekleme</a></li>
-                <li><a class="dropdown-item text-white" href="/Admin/Banner/">Banner Listeleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Banner/Add"><i class="fa-solid fa-plus me-2"></i>Banner Ekleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Banner/"><i class="fa-solid fa-images me-2"></i>Banner Listeleme</a></li>
             </ul>
         </div>
 
+        <a href="/Admin/Youtube"><i class="fa-brands fa-youtube me-2"></i>Youtube Ayarları</a>
+
+
+        <div class="dropdown">
+            <a class="dropdown-toggle d-flex justify-content-between align-items-center text-white" href="#"
+               id="PartnerDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span><i class="fas fa-users me-2"></i>İş Ortakları</span>
+            </a>
+            <ul class="dropdown-menu bg-dark mx-2" aria-labelledby="PartnerDropdown" style="width: 90%;">
+                <li><a class="dropdown-item text-white" href="/Admin/Partner/Add"><i class="fa-solid fa-plus me-2"></i>İş Ortak Ekleme</a></li>
+                <li><a class="dropdown-item text-white" href="/Admin/Partner/"><i class="fa-solid fa-images me-2"></i>İş Ortakları Listeleme</a></li>
+            </ul>
+        </div>
+
+        <a href="/Admin/Contact"><i class="fa-solid fa-envelope me-2"></i>Gelen Mesajlar</a>
+
+
+        <a class="text-white d-block" href="/Admin/Executive">
+            <i class="fa-solid fa-user-gear me-2"></i>Yönetici Ayarları
+        </a>
+        <a class="text-white d-block" href="/Admin/Site/">
+            <i class="fa-solid fa-gear me-2"></i>Site Ayarları
+        </a>
+
+        <a class="text-white d-block " href="/Admin/Login/Logout">
+            <i class="fa-solid fa-right-from-bracket me-2"></i>Çıkış Yap
+        </a>
 
     </div>
+
     <!-- Sidebar Finsh -->
 
     <div id="main" class="main">
