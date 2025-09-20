@@ -1,0 +1,62 @@
+﻿@model List<med.Models.Category>
+
+<div class="col-md-5 ">
+        <h4 class="mb-3 text-center">Kategoriler</h4>
+        <div class="category-list d-flex flex-column">
+            @foreach (var category in Model)
+            {
+                <div class="category-card p-2 rounded shadow-sm">
+                    <h6 class="mb-0 text-center">@category.Name</h6>
+                </div>
+            }
+        </div>
+    </div>
+
+<style>
+    .category-list {
+        height: 450px; /* toplam yükseklik */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* kartlar tüm yüksekliğe yayılır */
+        padding: 10px; /* gölgeyi daha belirgin yapmak için biraz iç boşluk */
+        background-color: #ffffff; /* beyaz arka plan */
+        border-radius: 8px; /* yuvarlatılmış köşeler */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* gölge ekledik */
+    }
+
+
+    .category-card {
+        background-color: #ffffff;
+        border: 1px solid #28a74533; /* hafif yeşil sınır */
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* gölge ekledik */
+    }
+
+        .category-card:hover {
+            background-color: #28a745;
+            color: #fff;
+            transform: translateX(3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* hover’da daha belirgin gölge */
+        }
+
+    @@media (max-width: 767.98px) {
+        .col-md-5 {
+            margin-top: 1rem; /* mt-5 yaklaşık 3rem */
+            display:none;
+        }
+
+        .category-list {
+            justify-content: flex-start;
+        }
+
+        .category-card {
+            margin-bottom: 5px !important;
+        }
+    }
+
+</style>

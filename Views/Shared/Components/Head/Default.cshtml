@@ -4,14 +4,11 @@
     <div class="wrapper">
         <a style="text-decoration:none;" href="/" class="logo">Şişli Acil Medikal</a>
 
-        <div class="mobil-navbar">
-            <button class="btn btn-outline-secondary" data-bs-toggle="offcanvas"
-                    data-bs-target="#mobileMenu">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </button>
-        </div>
+   
 
         <div class="list">
+  
+
             @if (!string.IsNullOrEmpty(Model?.Phone))
             {
                 <div class="d-flex align-items-center">
@@ -28,7 +25,22 @@
 
                 </div>
             }
+
+            <div class="mobil-navbar ">
+                <button class="btn btn-outline-secondary" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileMenu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+
+
         </div>
+        <div class="mobil-navbar d-md-none">
+            <button class="btn btn-outline-secondary" data-bs-toggle="offcanvas"
+                    data-bs-target="#mobileMenu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>  
     </div>
 
     <div class="search-box">
@@ -40,3 +52,5 @@
         </form>
     </div>
 </div>
+
+

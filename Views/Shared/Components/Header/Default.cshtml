@@ -6,7 +6,8 @@
 <div class="container">
 	@await Component.InvokeAsync("Head")
 
-	<div class="header-footer">
+	<!-- 
+		<div class="header-footer ">
 		<div class="category-slider mt-3">
 			<a href="/" class="btn btn-primary @(string.IsNullOrWhiteSpace(currentPath) ? "active" : "")">Ana Sayfa</a>
 
@@ -22,7 +23,36 @@
 		</div>
 
 	</div>
+
+	-->
 </div>
+
+<style>
+    /* Offcanvas içindeki body padding-bottom */
+    #mobileMenu .offcanvas-body {
+        padding-bottom: 130px;
+    }
+
+	/* Offcanvas genişliğini masaüstünde %50 yap */
+	@@media (min-width: 992px) { /* lg ve üstü */
+		#mobileMenu.offcanvas-start
+
+	{
+		width: 100% !important;
+	}
+
+	}
+
+	/* İstersen mobilde eski genişliği koru */
+	@@media (max-width: 991px) {
+		#mobileMenu.offcanvas-start
+
+	{
+		width: 100%; /* tam ekran */
+	}
+
+	}
+</style>
 
 <!-- Mobil Sidebar -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
