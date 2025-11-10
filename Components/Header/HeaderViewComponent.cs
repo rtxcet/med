@@ -16,6 +16,11 @@ namespace med.Components
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var categories = await _context.Categories.OrderBy(c => c.Id).ToListAsync();
+            var site = await _context.Sites.FirstOrDefaultAsync();
+            if (site != null)
+            {
+                ViewBag.SiteName = site.Name;
+            }
             return View(categories);
         }
     }

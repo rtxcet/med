@@ -4,10 +4,12 @@
         <h4 class="mb-3 text-center">Kategoriler</h4>
         <div class="category-list d-flex flex-column">
             @foreach (var category in Model)
-            {
+        {
+            <a href="/kategori/@category.Id">
                 <div class="category-card p-2 rounded shadow-sm">
-                    <h6 class="mb-0 text-center">@category.Name</h6>
+               <h6 class="mb-0 text-center">@category.Name</h6>
                 </div>
+                </a>
             }
         </div>
     </div>
@@ -22,6 +24,10 @@
         background-color: #ffffff; /* beyaz arka plan */
         border-radius: 8px; /* yuvarlatılmış köşeler */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* gölge ekledik */
+    }
+
+    .category-list a{
+        text-decoration:none;
     }
 
 
